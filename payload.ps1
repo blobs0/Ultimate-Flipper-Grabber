@@ -45,6 +45,12 @@ function Del-Wifi-File {
 Set-Location -Path "$env:temp"
 Remove-Item -Path "$env:tmp/js2k3kd4nne5dhsk" -Force -Recurse;rm $desktop\0.txt
  }
+ function Del-Nirsoft-File {
+  cd C:\
+  rmdir -R \temp
+}
+  
+
  Create-Wifi-File
 
 
